@@ -1,0 +1,20 @@
+{
+  "id": "6da61e7a-3ec8-4302-bbae-d7fabb8105af",
+  "request": {
+    "url": "/person/123",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 123,
+      "age": 23,
+      "sex": "MALE"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "uuid": "6da61e7a-3ec8-4302-bbae-d7fabb8105af"
+}
+
