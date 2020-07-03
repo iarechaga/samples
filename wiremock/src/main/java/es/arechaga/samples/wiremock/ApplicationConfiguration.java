@@ -1,4 +1,4 @@
-package com.santander.extended.gateway.wiremock;
+package es.arechaga.samples.wiremock;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

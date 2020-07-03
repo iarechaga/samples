@@ -1,7 +1,8 @@
-package com.santander.extended.gateway.wiremock;
+package es.arechaga.samples.wiremock;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -36,7 +37,7 @@ class PersonRetrieveIntegrationTest {
 
         assertThat(response.getId(), is(123));
         assertThat(response.getAge(), is(23));
-        assertThat(response.getSex(), is(Sex.MALE));
+        assertThat(response.getSex(), Matchers.is(Sex.MALE));
     }
 
     @Test
@@ -58,6 +59,6 @@ class PersonRetrieveIntegrationTest {
 
         assertThat(response.getId(), is(345));
         assertThat(response.getAge(), is(32));
-        assertThat(response.getSex(), is(Sex.FEMALE));
+        assertThat(response.getSex(), Matchers.is(Sex.FEMALE));
     }
 }

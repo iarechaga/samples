@@ -1,4 +1,4 @@
-package com.santander.extended.gateway.wiremock;
+package es.arechaga.samples.wiremock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
