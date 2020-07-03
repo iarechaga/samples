@@ -38,4 +38,25 @@ class PersonRetrieveIntegrationTest {
         assertThat(response.getAge(), is(23));
         assertThat(response.getSex(), is(Sex.MALE));
     }
+
+    @Test
+    void shouldCreatePerson() {
+        CreatePersonRequest request = new CreatePersonRequest(32, Sex.FEMALE);
+
+        ResponseById response = RestAssured
+                .given()
+                .port(port)
+                .contentType(ContentType.JSON)
+                .body(request)
+                .when()
+                .post("/person/")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .extract().as(ResponseById.class);
+
+        assertThat(response.getId(), is(345));
+        assertThat(response.getAge(), is(32));
+        assertThat(response.getSex(), is(Sex.FEMALE));
+    }
 }

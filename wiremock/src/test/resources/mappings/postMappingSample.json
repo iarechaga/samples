@@ -1,0 +1,30 @@
+{
+  "id": "6da61e7a-3ec8-4302-bbae-d7fabb8105af",
+  "request": {
+    "url": "/person/",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "equalToJson": "{\"age\": 32, \"sex\": \"FEMALE\"}"
+      }
+    ],
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 345,
+      "age": 32,
+      "sex": "FEMALE"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "uuid": "6da61e7a-3ec8-4302-bbae-d7fabb8105af"
+}
+
