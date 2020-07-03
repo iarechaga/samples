@@ -53,7 +53,8 @@ class PersonRetrieveIntegrationTest {
                 .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .extract().as(ResponseById.class);
+                .extract()
+                .as(ResponseById.class);
 
         assertThat(response.getId(), is(345));
         assertThat(response.getAge(), is(32));
