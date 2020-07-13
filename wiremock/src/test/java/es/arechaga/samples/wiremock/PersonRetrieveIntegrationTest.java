@@ -2,12 +2,10 @@ package es.arechaga.samples.wiremock;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
-import org.springframework.http.MediaType;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -25,7 +23,7 @@ class PersonRetrieveIntegrationTest {
         ResponseById response =
                 RestAssured.given()
                         .port(port)
-                        .header("Content-type", MediaType.APPLICATION_JSON_VALUE)
+                        .contentType(ContentType.JSON)
                         .pathParam("id", 123)
                         .when()
                         .get("/person/{id}")
@@ -37,7 +35,7 @@ class PersonRetrieveIntegrationTest {
 
         assertThat(response.getId(), is(123));
         assertThat(response.getAge(), is(23));
-        assertThat(response.getSex(), Matchers.is(Sex.MALE));
+        assertThat(response.getSex(), is(Sex.MALE));
     }
 
     @Test
@@ -59,6 +57,6 @@ class PersonRetrieveIntegrationTest {
 
         assertThat(response.getId(), is(345));
         assertThat(response.getAge(), is(32));
-        assertThat(response.getSex(), Matchers.is(Sex.FEMALE));
+        assertThat(response.getSex(), is(Sex.FEMALE));
     }
 }
