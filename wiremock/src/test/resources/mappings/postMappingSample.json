@@ -5,7 +5,16 @@
     "method": "POST",
     "bodyPatterns": [
       {
-        "equalToJson": "{\"age\": 32, \"sex\": \"FEMALE\"}"
+        "matchesJsonPath": {
+          "expression": "$.sex",
+          "equalTo": "FEMALE"
+        }
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.age",
+          "equalTo": "32"
+        }
       }
     ],
     "headers": {
